@@ -6,7 +6,7 @@
    $ mkdir dump
    ```
 
-2. Dowload a dump file and extract
+2. Download a dump zip file and extract
    ```shell
    $ cd dump
    $ wget http://www.jeuxdemots.org/JDM-LEXICALNET-FR/08282016-LEXICALNET-JEUXDEMOTS-FR-NOHTML.txt.zip
