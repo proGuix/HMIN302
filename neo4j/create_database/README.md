@@ -2,21 +2,27 @@
 
 1. In HMIN302 directory, create a dump directory
    ```shell
-   cd ../../
-   mkdir dump
+   $ cd ../../
+   $ mkdir dump
    ```
 
 2. Dowload a dump file and extract
+   ```shell
    $ cd dump
    $ wget http://www.jeuxdemots.org/JDM-LEXICALNET-FR/08282016-LEXICALNET-JEUXDEMOTS-FR-NOHTML.txt.zip
    $ unzip 08282016-LEXICALNET-JEUXDEMOTS-FR-NOHTML.txt.zip
    $ mv JDM-LEXICALNET-FR/08282016-LEXICALNET-JEUXDEMOTS-FR-NOHTML.txt dump.txt
    $ rm 08282016-LEXICALNET-JEUXDEMOTS-FR-NOHTML.txt.zip
+   ```
 
 3. Run split_dump_to_csv.rb with dump.txt in argument
+   ```shell
    $ ruby ../neo4j/create_database/split_dump_to_csv.rb dump.txt
+   ```
 
 4. Check your neo4j directory path at the line 3
-
+   
 5. And run create_db.rb
+   ```shell
    $ ruby ../neo4j/create_database/create_db.rb
+   ```
