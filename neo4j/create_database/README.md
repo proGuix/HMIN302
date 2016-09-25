@@ -1,8 +1,10 @@
 # create database
 
 1. In HMIN302 directory, create a dump directory
-   $ cd ../../
-   $ mkdir dump
+   ```shell
+   cd ../../
+   mkdir dump
+   ```
 
 2. Dowload a dump file and extract
    $ cd dump
