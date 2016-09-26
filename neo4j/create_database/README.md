@@ -21,7 +21,10 @@
    ```
 
 4. Check your neo4j directory path at the line 3 of create_db.rb
-   
+   ```shell
+   $ gedit ../neo4j/create_database/create_db.rb
+   ```
+
 5. And run create_db.rb
    ```shell
    $ ruby ../neo4j/create_database/create_db.rb
