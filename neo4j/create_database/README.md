@@ -2,7 +2,6 @@
 
 1. In HMIN302 directory, create a dump directory
    ```shell
-   $ cd ../../
    $ mkdir dump
    ```
 

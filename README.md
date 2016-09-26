@@ -9,12 +9,17 @@ The dump file contains millions entries, tens of millions relationships between 
 ## Getting start
 
 1. get a Linux OS
+
 2. get the Ruby language
+
 3. get an installation of neo4j graph database on : https://neo4j.com/
+
 4. get git
+
 5. clone this project
    ```shell
    $ git clone https://github.com/proGuix/HMIN302
-   ```
+   ```shell
+
 6. to create database, see the README.md of the neo4j/create_database/ directory
 
