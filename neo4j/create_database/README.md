@@ -12,6 +12,7 @@
    $ unzip 08282016-LEXICALNET-JEUXDEMOTS-FR-NOHTML.txt.zip
    $ mv JDM-LEXICALNET-FR/08282016-LEXICALNET-JEUXDEMOTS-FR-NOHTML.txt dump.txt
    $ rm 08282016-LEXICALNET-JEUXDEMOTS-FR-NOHTML.txt.zip
+   $ rm -r JDM-LEXICALNET-FR/
    ```
 
 3. Run split_dump_to_csv.rb with dump.txt in argument
