@@ -19,5 +19,5 @@ puts `mv graph.db #{dir_neo4j}data/databases/`
 puts "END: MOVE GRAPH.DB"
 
 puts "BEGIN: ADD CONSTRAINT"
-puts `#{dir_neo4j}bin/neo4j-shell -path #{dir_neo4j}data/databases/graph.db/ -file ../cypher/constraints.cql`
+puts `#{dir_neo4j}bin/neo4j-shell -path #{dir_neo4j}data/databases/graph.db/ -file ../neo4j/cypher/constraints.cql`
 puts "END: ADD CONSTRAINT"
