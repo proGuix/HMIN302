@@ -19,7 +19,7 @@ The dump file contains millions entries, tens of millions relationships between 
 5. clone this project
    ```shell
    $ git clone https://github.com/proGuix/HMIN302
-   ```shell
+   ```
 
 6. to create database, see the README.md of the neo4j/create_database/ directory
 
