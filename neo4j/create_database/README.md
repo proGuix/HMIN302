@@ -5,7 +5,7 @@
    $ mkdir dump
    ```
 
-2. Download a dump zip file and extract
+2. Download a dump zip and Term_Def.sql file and extract
    ```shell
    $ cd dump
    $ wget http://www.jeuxdemots.org/JDM-LEXICALNET-FR/08282016-LEXICALNET-JEUXDEMOTS-FR-NOHTML.txt.zip
@@ -13,6 +13,7 @@
    $ iconv -t UTF-8 -f ISO-8859-15 JDM-LEXICALNET-FR/08282016-LEXICALNET-JEUXDEMOTS-FR-NOHTML.txt > dump.txt
    $ rm 08282016-LEXICALNET-JEUXDEMOTS-FR-NOHTML.txt.zip
    $ rm -r JDM-LEXICALNET-FR/
+   $ wget http://www.lirmm.fr/~lafourca/EAPP/DUMP%20SQL/TermDef.sql
    ```
 
 3. Run split_dump_to_csv.rb with dump.txt in argument
