@@ -29,24 +29,31 @@ app.get('/controleur/controleur.js', function(req, res){
 });
 
 
-app.get('/Vue/home.html', function(req, res){
-	var contact = fs.readFileSync("Vue/home.html");
+app.get('/vue/home.html', function(req, res){
+	var contact = fs.readFileSync("vue/home.html");
 	res.end(contact);
 });
 
 
-app.get('/Vue/definition.html', function(req, res){
-	var contact = fs.readFileSync("Vue/definition.html");
+app.get('/vue/definition.html', function(req, res){
+	var contact = fs.readFileSync("vue/definition.html");
 	res.end(contact);
 });
 
-app.get('/Web/search.css', function(req, res){
+app.get('/web/search.css', function(req, res){
 	
-	var css= fs.readFileSync("Web/search.css");
+	var css= fs.readFileSync("web/search.css");
+		res.end(css);
+});
+
+app.get('/web/style.css', function(req, res){
+	
+	var css= fs.readFileSync("web/style.css");
 		res.end(css);
 });
 
 app.post('/getDico', function(req, res) {
+	console.log(req.query.input);
 	console.log("Match (n1:Node)-[:`1`]-(n2:Node) WHERE n1.n='"+req.query.input+"' OR n1.n='"+ req.query.input.charAt(0).toUpperCase()+ req.query.input.substring(1).toLowerCase() +"' RETURN n2 UNION MATCH (n3:Node {n:'"+ req.query.input.charAt(0).toUpperCase()+ req.query.input.substring(1).toLowerCase() +"'}) RETURN n2 RETURN n2 UNION MATCH (n3:Node {n:'"+ req.query.input+"'}) RETURN n2");
 	var query = "Match (n1:Node)-[:`1`]-(n2:Node) WHERE n1.n='"+req.query.input+"' OR n1.n='"+ req.query.input.charAt(0).toUpperCase()+ req.query.input.substring(1).toLowerCase() +"' RETURN n2 UNION MATCH (n2:Node {n:'"+ req.query.input.charAt(0).toUpperCase()+ req.query.input.substring(1).toLowerCase() +"'}) RETURN n2 UNION MATCH (n2:Node {n:'"+ req.query.input+"'}) RETURN n2";
 	var params={n:req.query.input,};
@@ -178,14 +185,27 @@ app.post('/getRel', function(req, res) {
 	    for ( var i = results.length - 1; i >= 0; i--) {
 	       	var result = results[i];
 	  		if(result != null){
-	  			var subnode=[result['r']['type'],result['n2']['properties']['n']];
+	  			var subnode=[result['r']['type'],result['n2']['properties']];
 	  			node.push(subnode);
 	  		}
-		  	
 		}
 		console.log(node);
 		res.send(JSON.stringify(node, null, 3));
 		
+	});
+});	
+
+app.post('/getRelName', function(req, res) {
+	var query = "Match (r:Type_Rel {rtid:{rtid}}) RETURN  r";
+	var params={rtid:req.query.rtid,};
+	
+	db.cypher({
+		 query: query,
+	    params: params,
+	}, function (err, results) {
+		if (err) throw err;
+		console.log(results[0]['r']['properties']['nom_etendu'])
+		res.send(JSON.stringify(results[0]['r']['properties']['nom_etendu'], null, 3));
 	});
 });	
 

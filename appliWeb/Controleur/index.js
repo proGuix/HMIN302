@@ -20,15 +20,15 @@ routeApp.config(['$routeProvider',
         // Système de routage
         $routeProvider
         .when('/', {
-            templateUrl: 'Vue/definition.html',
-            controller: 'homeCtrl'
+            templateUrl: 'vue/home.html',
+            controller: 'searchCtrl'
         })
         .when('/home', {
-            templateUrl: 'Vue/home.html',
-            controller: 'homeCtrl'
+            templateUrl: 'vue/home.html',
+            controller: 'searchCtrl'
         })
-        .when('/getDef/:eid', {
-            templateUrl: 'Vue/definition.html',
+        .when('/getDef/:n', {
+            templateUrl: 'vue/definition.html',
             controller: 'homeCtrl'
         })
    
