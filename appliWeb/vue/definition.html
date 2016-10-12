@@ -27,14 +27,49 @@
 		</nav>
 	
 		<div class="row" >
-	  		<div class="col-xs-4 col-md-2"">
-	  			<div id='list'>
-	  				
-	  			</div>
+	  		<div class="col-xs-4 col-md-3"">	
+		  			 <div id="raffinement" class="panel-group">
+	    				<nav id="navigation" role="navigation" class="panel panel-default">
+			  				    <div class="panel-heading">
+							      <h4 class="panel-title"><span>Raffinement</span>
+							        <a id='aRaf' class="accordion-toggle" data-toggle="collapse" data-parent="accordion" href="collapseOne" ng-click="showHide('aRaf')">
+							          <span class="glyphicon glyphicon-minus pull-right"></span>
+							        </a>
+							      </h4>
+							    </div>
+			  				<div id="collapseOne" class="panel-collapse collapse in">
+	     					 <div class="panel-body">
+	     					 	
+				  				<ul id="list" class="nav-inner">
+				  					
+				  				</ul>
+				  				
+				  			 </div>
+				  			</div>
+				  		</nav>
+					</div>
+				
 	  		</div>
-	  		<div class="col-xs-12 col-md-8">
-	  			<div id='definitions'>Definitions</div>
-	    		<div id='relations'></div>
+	  		
+	  		<div class="col-xs-12 col-md-9 main" >
+	  			<div id="Definitions" class="panel-group">
+    				<div class="panel panel-default">
+		  			    <div class="panel-heading">
+					      <h4 id="titleDef" class="panel-title"><span></span>
+					        <a id='aDef' class="accordion-toggle" data-toggle="collapse" data-parent="accordion" href="collapseTwo" ng-click="showHide('aDef')">
+					          <span class="glyphicon glyphicon-minus pull-right"></span>
+					        </a>
+					      </h4>
+					    </div>
+				    	<div id="collapseTwo" class="panel-collapse collapse in">
+     					 <div class="panel-body">
+			  				<ul id='relations'>
+			  					
+			  				</ul>
+			  			 </div>
+			  			</div>
+	    			</div>
+	    		</div>	
 	    	</div>
 	   </div>
    </div>

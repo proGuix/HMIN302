@@ -172,7 +172,7 @@ app.post('/getTrad', function(req, res) {
 });
 
 app.post('/getRel', function(req, res) {
-	var query = "Match (n1:Node {eid:{eid}})-[r]-(n2:Node) RETURN  r,n2 ORDER BY r.w DESC";
+	var query = "Match (n1:Node {eid:{eid}})-[r]-(n2:Node) RETURN r,n2 ORDER BY r.w DESC";
 	var params={eid:req.query.eid,};
 	
 	db.cypher({
@@ -182,6 +182,7 @@ app.post('/getRel', function(req, res) {
 		console.log("aaaa"+results);
 	    if (err) throw err;
 	    var node = [];
+	    
 	    for ( var i = results.length - 1; i >= 0; i--) {
 	       	var result = results[i];
 	  		if(result != null){
@@ -195,6 +196,30 @@ app.post('/getRel', function(req, res) {
 	});
 });	
 
+app.post('/getRelName', function(req, res) {
+	var query = "Match (r:Type_Rel {rtid:{rtid}}) RETURN r";
+	var params={rtid:req.query.rtid,};
+	
+	db.cypher({
+		 query: query,
+	    params: params,
+	}, function (err, results) {
+		console.log(results[0]['r']['properties']);
+	    if (err) throw err;
+	    var node = [];
+	    
+	    for ( var i = results.length - 1; i >= 0; i--) {
+	       	var result = results[i];
+	  		if(result != null){
+	  			var subnode=[result['r']['properties']['nom_etendu']];
+	  			node.push(subnode);
+	  		}
+		  	
+		}
+		res.send(JSON.stringify(node, null, 3));
+		
+	});
+});	
 
 
 app.listen(8888);
