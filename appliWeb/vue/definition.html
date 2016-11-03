@@ -9,68 +9,73 @@
 		          <span class="icon-bar"></span>
 		          <span class="icon-bar"></span>
 		        </button>
-		        <a class="navbar-brand" href="#">GetWord</a>
+		        <a id="getword" class="navbar-brand" href="#">GetWord</a>
 		   	 </div>	
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		        <div class="col-sm-3 col-md-3 pull-right">
+		        <div class="col-sm-5 col-md-5 col-centered">
 		            
 		          <form class="navbar-form" method="post">
-		                <div class="input-group">
+		                <div id="searchBar" class="input-group">
 		                    <input type="text" class="form-control" placeholder="Search" name="q" ng-model="input">
 		                    <div class="input-group-btn">
 		                        <button class="btn btn-default" type="submit" ng-click="getDico()"><i class="glyphicon glyphicon-search"></i></button>
 		                    </div>
 		                </div>
-		            </form>
-		        </div>        
+		          </form>
+		        </div>   
+		        <div class="pull-right">
+		    		<button type="button" class="btn btn-primary">Options</button>
+		   		 </div>     
+		    </div>
 		    
 		</nav>
 	
 		<div class="row" >
-	  		<div class="col-xs-4 col-md-3"">	
-		  			 <div id="raffinement" class="panel-group">
-	    				<nav id="navigation" role="navigation" class="panel panel-default">
-			  				    <div class="panel-heading">
-							      <h4 class="panel-title"><span>Raffinement</span>
-							        <a id='aRaf' class="accordion-toggle" data-toggle="collapse" data-parent="accordion" href="collapseOne" ng-click="showHide('aRaf')">
-							          <span class="glyphicon glyphicon-minus pull-right"></span>
-							        </a>
-							      </h4>
-							    </div>
-			  				<div id="collapseOne" class="panel-collapse collapse in">
-	     					 <div class="panel-body">
-	     					 	
-				  				<ul id="list" class="nav-inner">
-				  					
-				  				</ul>
-				  				
-				  			 </div>
-				  			</div>
-				  		</nav>
-					</div>
-				
+
+	  		<div class="col-xs-4 col-md-3"">
+	  			<table id="raffinement">
+	  				<thead>
+			  			<tr>
+				  			<th>
+				  				<h4 class="panel-title">
+				  					<span>Raffinement</span>
+				  					 <a id='aRaf' class="accordion-toggle" data-toggle="collapse" data-parent="accordion" href="collapseOne" ng-click="showHide('aRaf')">
+						     		 	<span class="glyphicon glyphicon-minus pull-right"></span>
+					        		</a>
+				  				</h4>
+				  			</th>
+				  		</tr>
+				  	</thead>
+				  	<tbody id="collapseOne">
+				  	
+	 	 			
+				  	</tbody>
+	  			</table>	
 	  		</div>
 	  		
 	  		<div class="col-xs-12 col-md-9 main" >
-	  			<div id="Definitions" class="panel-group">
-    				<div class="panel panel-default">
-		  			    <div class="panel-heading">
-					      <h4 id="titleDef" class="panel-title"><span></span>
-					        <a id='aDef' class="accordion-toggle" data-toggle="collapse" data-parent="accordion" href="collapseTwo" ng-click="showHide('aDef')">
-					          <span class="glyphicon glyphicon-minus pull-right"></span>
-					        </a>
-					      </h4>
-					    </div>
-				    	<div id="collapseTwo" class="panel-collapse collapse in">
-     					 <div class="panel-body">
-			  				<ul id='relations'>
-			  					
-			  				</ul>
-			  			 </div>
-			  			</div>
-	    			</div>
-	    		</div>	
-	    	</div>
+		  		<table >
+		  			<thead>
+			  			<tr>
+				  			<th>
+				  				<h4 class="panel-title">
+				  					<span>Domaines</span>
+				  				</h4>
+				  			</th>
+		    				<th>
+		    					<h4 class="panel-title">
+				  					<span>Plus</span>
+				  				</h4>
+				  			</th>
+		    			</tr>
+		    		</thead>
+		    		<tbody id=relations>
+		    			
+		    		</tbody >	
+	    			
+	    			
+		    	</table>
+		    </div>
 	   </div>
    </div>
 </section>
