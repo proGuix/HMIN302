@@ -98,9 +98,15 @@ th {
 
 .nbrAssociations{
 	color: #000;
-	margin-left: 4%;
+	margin-left: 8%;
 	margin-top: 2%;
-	
-
 	width: 100%
+}
+
+#nbr{
+	margin-left: 3%;
+}
+
+.glyphicon-chevron-right{
+     font-size: 15px;
 }

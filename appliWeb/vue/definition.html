@@ -23,9 +23,18 @@
 		                </div>
 		          </form>
 		        </div>   
-		        <div class="pull-right">
-		    		<button type="button" class="btn btn-primary">Options</button>
-		   		 </div>     
+		        
+		    	<div class="dropdown pull-right">
+				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				    Options
+				    <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				    <li><a ng-click="show()">Ajouter les relations supprimées</a></li>
+				  </ul>
+				</div>
+
+		   		     
 		    </div>
 		    
 		</nav>

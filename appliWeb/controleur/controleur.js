@@ -71,6 +71,16 @@ routeAppControllers.controller('homeCtrl', function($scope, $http, $compile, $ro
 			}
 			};
 
+		$scope.hide = function(val) {
+			$("#"+val).parent().hide();
+		};	
+
+		$scope.show = function() {
+			$('#relations').children('tr').each(function () {
+		    	$(this).show();
+		    })
+		};	
+
         $scope.getDico = function(val) {
         	var input = null;
         	if(val == null){
@@ -83,12 +93,6 @@ routeAppControllers.controller('homeCtrl', function($scope, $http, $compile, $ro
 		    method: "POST",
 		    params: input,
 		    }).
-	        success(function(data) {
-		        $http({
-			    url: "/getDico",
-			    method: "POST",
-			    params: input,
-			    }).
 		        success(function(data) {
 	            console.log("posted successfully ");
 	          	$http({
@@ -128,7 +132,7 @@ routeAppControllers.controller('homeCtrl', function($scope, $http, $compile, $ro
 	        }).error(function(data) {
             console.error("error in posting");
         	})
-    	})
+    	//})
     };
     $scope.getRel= function(eid, name){
  		$http({
@@ -148,9 +152,14 @@ routeAppControllers.controller('homeCtrl', function($scope, $http, $compile, $ro
 		    	 	//console.log($('#titleDef').find('span'));
 		    	 	var divnbr = document.createElement('div');
 		    	 	var nbrAssociations = document.createElement('span');
+		    	 	var icone = document.createElement('span');
+		    	 	icone.setAttribute('class',"glyphicon glyphicon-chevron-right");
+		    	 	nbrAssociations.setAttribute('id',"nbr");
 		    	 	nbrAssociations.appendChild(document.createTextNode(nbr));
+		    	 	divnbr.appendChild(icone);
 		    	 	divnbr.appendChild(nbrAssociations);
 		    	 	divnbr.setAttribute('class', "nbrAssociations" );
+		    	 	$(".nbrAssociations").remove();
 		    	 	$("#"+eid).parent().parent().append(divnbr);
 		    	 	console.log($(eid).parent());
 		    	 	var tbody =  document.getElementById("relations");
@@ -173,6 +182,13 @@ routeAppControllers.controller('homeCtrl', function($scope, $http, $compile, $ro
 		    	 			a1.setAttribute("ng-click","hideShow("+data[i]+","+eid+")");
 		    	 			var compiled = $compile(a1)($scope);
 		    	 			h4.appendChild(a1);
+		    	 			var icone = document.createElement('span');
+		    	 			icone.setAttribute('class',"glyphicon glyphicon-remove pull-right");
+		    	 			var a2 = document.createElement("a");
+		    	 			a2.appendChild(icone);
+		    	 			a2.setAttribute("ng-click","hide("+data[i]+")");
+		    	 			var compiled = $compile(a2)($scope);
+		    	 			h4.appendChild(a2);
 		    	 			divTitle.appendChild(h4);
 		    	 			var div2 = document.createElement("div");
 		    	 			td.setAttribute("id",data[i]);
