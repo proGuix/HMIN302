@@ -49,7 +49,9 @@ routeAppControllers.controller('homeCtrl', function($scope, $http, $compile, $ro
 				}). 
 				success(function(data) {
 					console.log(data);
+					var div = document.createElement(div);
 					for (var i = data.length - 1; i >= 0; i--) {
+
 						var a = document.createElement("a");
 						a.setAttribute("ng-click", 'getRel('+data[i]['eid']+')');
 						if (list.firstChild) {
