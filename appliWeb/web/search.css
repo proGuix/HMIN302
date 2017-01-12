@@ -20,7 +20,7 @@
 
 .form-control{
     height:3%;
-    padding-left:15px;
+    width: 100%;
     border-radius:6px;
     border:none;
     color:#939393;
@@ -49,6 +49,10 @@
         0 15px 15px 0 rgba(41, 41, 41, 0.09) inset;
 }
 
+#searchBar{
+    width: 100%;
+}
+
 button[type="submit"]{
     width: 85%;
     height:151%;
@@ -65,3 +69,21 @@ button[type="submit"]{
     border-bottom-color: #dddddd;
     
 }
+
+.pull-right{
+    margin-top: 0.7%;
+    margin-right: 2%; 
+}
+
+.pull-right > button{
+    background-color: #A44600;
+    border-color: #DC6600;
+}
+
+nav > div, nav{
+    background-color: #000066;
+}
+
+#getword{
+ color: #ffffff;
+} 
