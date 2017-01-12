@@ -19,8 +19,7 @@
 ## format dump.txt
 
 3. Run split_dump_to_csv.rb with dump.txt in argument
-   ```shell
-   $ ruby ../neo4j/create_database/split_dump_to_csv.rb dump.txt
+   ```shell $ ruby ../neo4j/create_database/split_dump_to_csv.rb dump.txt
    ```
 
 ## format TermDef.sql
